@@ -3,16 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import {HttpClientModule} from '@angular/common/http'
+import { BookserviceService } from "./service/bookservice.service"
+import { BookComponentComponent } from './book-component/book-component.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderBookComponent } from './header-book/header-book.component';
+import { CmtComponentComponent } from './cmt-component/cmt-component.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookComponentComponent,
+    HeaderBookComponent,
+    CmtComponentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [BookserviceService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
