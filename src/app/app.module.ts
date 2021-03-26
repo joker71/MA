@@ -9,12 +9,14 @@ import { BookComponentComponent } from './book-component/book-component.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderBookComponent } from './header-book/header-book.component';
 import { CmtComponentComponent } from './cmt-component/cmt-component.component';
+import { BookinforComponent } from './bookinfor/bookinfor.component';
 @NgModule({
   declarations: [
     AppComponent,
     BookComponentComponent,
     HeaderBookComponent,
-    CmtComponentComponent
+    CmtComponentComponent,
+    BookinforComponent
   ],
   imports: [
     BrowserModule,
