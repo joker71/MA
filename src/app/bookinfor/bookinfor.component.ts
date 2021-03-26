@@ -1,6 +1,4 @@
-import { importType } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
-import { Book } from "../model/Book";
 import { BookserviceService } from "../service/bookservice.service"
 @Component({
   selector: 'app-bookinfor',
