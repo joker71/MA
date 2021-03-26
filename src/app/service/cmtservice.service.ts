@@ -14,6 +14,6 @@ export class CmtserviceService {
   }
   getCmtbyBookid(bookid: number): Observable<any>
   {
-    return this.http.get<Cmt>(this.baseUrl + "/" + bookid);
+    return this.http.get<Cmt>(`${this.baseUrl}/${bookid}`);
   }
 }

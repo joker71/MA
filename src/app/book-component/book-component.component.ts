@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '../model/Book';
 import { BookserviceService } from "../service/bookservice.service"
 @Component({
   selector: 'app-book-component',
@@ -6,7 +7,9 @@ import { BookserviceService } from "../service/bookservice.service"
   styleUrls: ['./book-component.component.css']
 })
 export class BookComponentComponent implements OnInit {
-  id:any;
+  bookOut: any;
+  id: any;
+  nextcom: any = "bookContainer";
   constructor(private bookService: BookserviceService ){}
   bookList: any=[];
   ngOnInit(): void {
@@ -14,8 +17,9 @@ export class BookComponentComponent implements OnInit {
       this.bookList= data;
     })
   }
-  DirectFunction(idbook: any){
-    
+  DirectFunction(nextcom: any, idIn: any){
+    this.nextcom = nextcom;
+    this.id = idIn;
   }
 
 }

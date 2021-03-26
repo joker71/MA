@@ -11,10 +11,14 @@ export class BookserviceService {
   getBook(): Observable<Book> {
     return this.http.get<Book>(this.baseURL);
   }
+  getBookByID(id:number): Observable<object>
+  {
+    return this.http.get<Book>(`${this.baseURL}books/${id}`)
+  }
   addBook(Book: Object): Observable<Object>{
     return this.http.post('{$this.url}', Book);
   }
   deleteBook(id: number): Observable<any> {
-    return this.http.delete('${this.baseURL}/${id}', {responseType: 'text'})
+    return this.http.delete(`${this.baseURL}/${id}`, {responseType: 'text'})
   }
 }

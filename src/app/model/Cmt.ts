@@ -1,5 +1,5 @@
 export class Cmt{
-    constructor(bookid: string, userid: string, cmtid: string,  content: string, cmtdec: BigInteger)
+    constructor(bookid: BigInteger, userid: string, cmtid: string,  content: string, cmtdec: BigInteger)
     {
         this.bookid= bookid;
         this.userid= userid;
@@ -7,7 +7,7 @@ export class Cmt{
         this.cmtid= cmtid;
         this.cmtdec= cmtdec;
     }
-    bookid: string;
+    bookid: BigInteger;
     userid: string;
     cmtid: string;
     content: string;

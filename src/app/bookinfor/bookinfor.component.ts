@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-
+import { importType } from '@angular/compiler/src/output/output_ast';
+import { Component, Input, OnInit } from '@angular/core';
+import { Book } from "../model/Book";
+import { BookserviceService } from "../service/bookservice.service"
 @Component({
   selector: 'app-bookinfor',
   templateUrl: './bookinfor.component.html',
   styleUrls: ['./bookinfor.component.css']
 })
 export class BookinforComponent implements OnInit {
+  @Input() id: any;
+  constructor(private bookService: BookserviceService) { }
+  book: any ;
 
-  constructor() { }
-  
   ngOnInit(): void {
+    this.bookService.getBookByID(this.id).subscribe(data=>{
+      this.book=data;
+    })
+    
   }
 
 }

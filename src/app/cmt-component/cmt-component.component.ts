@@ -7,14 +7,13 @@ import { CmtserviceService } from '../service/cmtservice.service';
   styleUrls: ['./cmt-component.component.css']
 })
 export class CmtComponentComponent implements OnInit {
-  constructor(private cmtService: CmtserviceService) { }
   cmts: any=[];
+  @Input() bookid:any
+  constructor(private cmtService: CmtserviceService) { }
   ngOnInit(): void {
+    this.cmtService.getCmtbyBookid(this.bookid).subscribe(data=>{
+      this.cmts=data;
+    })
   }
-  Get(id:any): any{
-  this.cmtService.getCmtbyBookid(id).subscribe((data:{})=>{
-    this.cmts= data;
-    console.log(data);
-  })
-}
+
 }
