@@ -1,0 +1,19 @@
+<label *ngIf="function=='creat'">
+    Bình luận:
+    <textarea name="cmt" id="cmt" cols="30" rows="10" [formControl]= "content"></textarea>
+    <p>
+        <button (click)="addcoment()">post</button>
+    </p>
+    <p>{{content.value}}</p>
+</label>
+<p>
+    <button (click)="reply()">reply</button>
+</p>
+<label *ngIf="function== 'reply'">
+    Tra loi:
+    <textarea name="cmt" id="cmt" cols="30" rows="10" [formControl]= "content">reply to:{{this.userid}}</textarea>
+    <p>
+        <button (click)="addcoment()">post</button>
+    </p>
+    <p>{{content.value}}</p>
+</label>

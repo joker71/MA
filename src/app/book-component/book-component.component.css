@@ -11,7 +11,7 @@
   
   .bookContainer {
     vertical-align: top;
-    display: inline-block;
+    display: inline-block; /* tu dong day hang*/
     background: rgba(242, 253, 244, 0.9);
     width: 220px;
     height: 430px;
@@ -28,7 +28,6 @@
   
   .bookContainer a {
     text-decoration: none;
-    /* font-weight: bold; */
     font-size: 1.5em;
     width: 60px;
     height: 30px;
@@ -90,6 +89,10 @@
     background-size: cover;
     background-origin: padding-box;
     box-shadow: 7px 0px 10px rgba(0, 0, 0, .3), -7px 0px 10px rgba(0, 0, 0, .5);
+  }
+
+  .book-shelf{
+    background-image: url(src\assets\bg_pattern.jpg);
   }
   
   #headerImage img {

@@ -10,13 +10,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderBookComponent } from './header-book/header-book.component';
 import { CmtComponentComponent } from './cmt-component/cmt-component.component';
 import { BookinforComponent } from './bookinfor/bookinfor.component';
+import { CreatComentComponent } from './creat-coment/creat-coment.component';
 @NgModule({
   declarations: [
     AppComponent,
     BookComponentComponent,
     HeaderBookComponent,
     CmtComponentComponent,
-    BookinforComponent
+    BookinforComponent,
+    CreatComentComponent
   ],
   imports: [
     BrowserModule,

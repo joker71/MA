@@ -16,4 +16,7 @@ export class CmtserviceService {
   {
     return this.http.get<Cmt>(`${this.baseUrl}/${bookid}`);
   }
+  addConment(Cmt: Object): Observable<Object>{
+    return this.http.post(`${this.baseUrl}/`, Cmt);
+  }
 }
