@@ -1,19 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CmtserviceService } from '../service/cmtservice.service';
-
+import { CmtseviceService } from '../service/cmtsevice.service'
+import {Cmt} from '../model/Cmt'
 @Component({
   selector: 'app-cmt-component',
   templateUrl: './cmt-component.component.html',
   styleUrls: ['./cmt-component.component.css']
 })
 export class CmtComponentComponent implements OnInit {
-  cmts: any=[];
-  @Input() bookid:any
-  constructor(private cmtService: CmtserviceService) { }
+
+  @Input() id: any
+  cmt: any=[];
+  constructor(private cmtSer:CmtseviceService) { }
+
   ngOnInit(): void {
-    this.cmtService.getCmtbyBookid(this.bookid).subscribe(data=>{
-      this.cmts=data;
-    })
+    this.cmtSer.getCmtByID(this.id).subscribe((data:{})=>{
+      this.cmt = data;
+    });
+    console.log(this.cmt);
   }
 
 }

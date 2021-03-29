@@ -1,41 +1,38 @@
-import { analyzeAndValidateNgModules, ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms'
 import { Cmt } from '../model/Cmt';
-import { CmtserviceService } from '../service/cmtservice.service';
+import { CmtseviceService } from '../service/cmtsevice.service';
 @Component({
   selector: 'app-creat-coment',
   templateUrl: './creat-coment.component.html',
   styleUrls: ['./creat-coment.component.css']
 })
 export class CreatComentComponent implements OnInit {
-  bookid: any;
-  userid: string;
-  cmtid: string;
-  cmtdec: any;
-  function: any="creat";
-  content = new FormControl('');
-  constructor(private cmtService: CmtserviceService) {
-    this.bookid= 1;
-    this.userid="01";
-    this.cmtdec=1;
-    this.cmtid="0" + this.userid;
-   }
+  @Input() id: any
+  userid: string= "01"
+  cmtid: string= "1002"
+  cmtdec: any=1
+  content: any=new FormControl('content')
+  function: any= 'creat'
+  constructor(private cmtService: CmtseviceService) {
+  }
 
 
   ngOnInit(): void {
   }
+  generateUniqueId (userid:string):string {
+    let res: string=this.userid;
+    res=res+"-"+Date.now()+"-"+this.cmtdec;
+    return res;
+  }
   addcoment()
   {
-     var newCmt= new Cmt(this.bookid, this.userid, this.cmtid, this.content.value, this.cmtdec);
-     this.cmtService.addConment(newCmt);
-  }
-  reply(){
-    this.function="reply";
-    this.cmtdec++;
-    var newCmt= new Cmt(this.bookid, this.userid, this.cmtid, this.content.value, this.cmtdec);
-    console.log(newCmt);
-    this.cmtService.addConment(newCmt);
+     var newCmt= new Cmt(this.id, this.userid, this.generateUniqueId(this.userid), this.content.value, this.cmtdec);
+     try{
+      console.log(this.cmtService.addCmt(newCmt).subscribe());
+     }catch(err){
+       console.log(err);
+     }  
   }
 
 }
