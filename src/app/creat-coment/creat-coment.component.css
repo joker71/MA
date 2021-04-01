@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 60vw;
+    margin: 10px auto;
+    text-align:center;
+    display:border-box;
+    padding:5px;
+  }
+
+  .input {
+    width: 55vw;
+    resize: none;  
+  }
+  input {
+    width: 45vw; 
+    height: 2rem;
+    margin-bottom: 5px;
+  
+  }
+
+  textarea {
+    font-family: "Oswald";       
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .first-line{ 
+    display:flex;
+    width:60vw;
+    align-items: center;
+    justify-content:center;
+    
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+    height: 2rem;
+    width:9vw;
+   
+    
+  }
+  textarea,button,input{
+    font-family:Oswald;
+    padding:5px;
+  }
+  h2{
+    text-align:center;
+    color:rgb(24, 24, 24);
+    line-height:200%
+   
+  }
+  p{
+    color:white;
+   
+  }
+  
+  button{
+    background-color:#F5F5F5;
+    border:none;
+    font-size:100%;
+    width:8vw
+  }
+  button:hover{
+    background-color:#9d9d9d;
+    
+  }
+
+  @media (max-width: 729px) {
+    .container {
+      width: 100vw;
+    }
+  }

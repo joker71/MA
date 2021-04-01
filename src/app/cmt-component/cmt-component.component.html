@@ -1,5 +1,21 @@
-<p>cmt-component works!</p>
+<!-- <p>cmt-component works!</p>
 <div class='cmt-component' *ngFor="let i of cmt">
- <a><b>Bình luận của: </b>{{i.userid}}:</a>
- <p>{{i.content}}</p>
+    <a><b>Bình luận của người dùng: </b>{{i.userid}}:</a>
+    <p>{{i.content}}</p>
+</div> -->
+<div class='cmt-component' *ngFor="let i of cmt">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <div class="container">
+        <div class="ava">
+            <i class="fa fa-user-o" aria-hidden="true"></i> <small>{{i.userid}}</small>
+        </div>
+        <!-- <h3>${title} (${rating.toFixed(1)}<small>/5.0</small>)</h3> -->
+        <br>
+        <p class="ava">
+            {{i.content}}
+        </p>
+
+
+    </div>
+    <div></div>
 </div>

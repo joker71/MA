@@ -1,8 +1,23 @@
-<label *ngIf="function=='creat'">
-    Bình luận:
+<!-- Bình luận:
     <textarea name="cmt" id="cmt" cols="30" rows="10" [formControl]= "content"></textarea>
     <p>
         <button (click)="addcoment()">post</button>
     </p>
-    <p>{{content.value}}</p>
+    <p>{{content.value}}</p> -->
+<label *ngIf="function=='creat'">
+    <div class="container">
+        <form id="review-form">
+            <h2>Bạn nghĩ gì về cuốn sách này ?</h2>
+
+            <textarea rows="6" name="content" id="content" class="input" placeholder="Nhập đánh giá của bạn..."
+                [formControl]="content"></textarea>
+
+            <div class="rating">
+
+            </div>
+            <button type="submit">
+                <h3>Đăng</h3>
+            </button>
+        </form>
+    </div>
 </label>

@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 55vw;
+    background-color:none;
+    margin: 2vh auto;
+    padding: 2vw;
+  }
+  .ava{
+      float: left;
+  }
+  @media (max-width: 729px) {
+    .container {
+      width: 100vw;
+    }
+  }
